@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>face detection</title>
+    <style>
+        body{
+            background-image: url("/static/2.jpg");
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+        }
+        .heading{
+            width: 100%;
+            height: 5rem;
+            text-align: center;
+        }
+        .heading h1{
+            margin:1rem 0rem;
+            font-size: 2rem;
+            color: white;
+        }
+        #main_container{
+            height: 15rem;
+            width: 40%;
+            margin-left: 30%;
+            background-color: rgb(73, 71, 71);
+            padding-top: 10%;
+        
+        }
+        #main_container img{
+            position: absolute;
+            height: calc(15rem + 20.5%);
+            width: 40%;
+            top: 14.5%;
+        }
+        .loading{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            border: 0.5rem groove;
+            border-top: 0.5rem groove rgb(114, 114, 117);
+            margin-left: 42%;
+            animation: effect 0.8s infinite linear;
+        }
+        .text{
+            width: 100%;
+            height: 2rem;
+            font-size: 1.5rem;
+            color: white;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        @keyframes effect {to{transform: rotateZ(360deg);}}
+        @media (max-width:1000px){
+            #main_container{
+                width: 80%;
+                margin-left: 10%;
+                height: 20rem;
+
+            }
+            #main_container img{
+                height: 58%;
+                width: calc(15rem + 26.5%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading"><H1>DETECT YOUR FACE</H1></div>
+        <div id="main_container">
+            <div class="loading"></div><div class="text">Loading...</div>
+
+            <img src="{{ url_for('face_feed') }}" width="100%">
+        </div>
+    </div>
+</body>
+</html>

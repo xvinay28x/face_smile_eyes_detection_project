@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("/static/2.jpg");
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 18px;
+            font-family: sans-serif;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+        }
+        .heading{
+            width: 100%;
+            height: 5rem;
+            text-align: center;
+        }
+        .heading h1{
+            margin:1rem 0rem;
+            font-size: 2rem;
+            color: white;
+        }
+        #main_container{
+            height: auto;
+            width: 90%;
+            background-color: aqua;
+            margin: 0rem 5%;
+            display: flex;
+            display: block;
+        
+            
+        }
+        .face_detection{
+            width: 17rem;
+            height: 22rem;
+            border-radius: 0 0 1rem 1rem;
+            margin: 2rem 4.1rem;
+            float: left;
+        }
+        .face_detection button{
+            height: 3.5rem;
+            width: 100%;
+            border-radius: 1rem;
+            border: none;
+            margin-top: 1.2rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            background-color: rgb(128, 126, 126);
+        
+        }
+        .face_detection button:hover{
+            background-color: rgb(201, 165, 5);
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading"><H1>FACE DETECTION</H1></div>
+        <div id="main_container">
+            <div class="face_detection">
+                <img src="/static/face.jpg" alt="" height="306px" width="306px">
+                <form action="/face" method="POST"><button type="submit">Face Detection</button></form>
+            </div>
+            <div class="face_detection">
+                <img src="/static/smile.jpg" alt="" height="306px" width="306px">
+                <form action="/smile" method="POST"><button type="submit">Smile Detection</button></form>
+            </div>
+            <div class="face_detection">
+                <img src="/static/eyes.jpg" alt="" height="306px" width="306px">
+                <form action="/eyes" method="POST"><button type="submit">Eyes Detection</button></form>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
